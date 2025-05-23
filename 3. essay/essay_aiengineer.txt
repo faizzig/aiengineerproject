@@ -1,0 +1,19 @@
+Konteks: Sebuah perusahaan harus mendeteksi dan mencegah aktivitas kecurangan atau manipulasi pada proses reimbursement di internal perusahaan contohnya penggunaan kartu kredit yang bukan untuk kepentingan perusahaan, permintaan reimbursement dari nota belanja yang sudah dimanipulasi, pemalsuan terhadap perjalanan dinas dan sebagainya.
+
+Solusi:
+
+   1. Melakukan pendekatan dengan Machine Learning Classification Model dengan Random Forest atau XGBoost. Model ini menggunakan data kecurangan yang pernah terjadi untuk memprediksi apakah pengajuan reimbursement baru berpotensi curang atau tidak. Misalnya, model akan belajar dari pola nota yang dimanipulasi dan mendeteksi kemiripan pada klaim baru.
+
+   2. Data yang dibutuhkan untuk model ML tersebut yaitu:
+      - Riwayat transaksi keuangan (tanggal, jumlah, kategori pengeluaran).
+      - Nota dan struk pembayaran, bisa berupa gambar yang diproses dengan OCR (Optical Character Recognition) untuk membaca teks secara otomatis.
+      - Data perjalanan dinas, termasuk tanggal, lokasi, harga tiket, hotel, dan jenis pengeluaran lainnya.
+      - Riwayat kasus kecurangan sebelumnya, untuk melatih model dalam mengenali pola-pola penipuan.
+      - Profil karyawan, seperti jabatan dan batas anggaran normal yang biasa digunakan untuk perjalanan dinas.
+
+   3. Cara implementasi di perusahaan bisa dilakukan dengan cara:
+      - Kumpulkan data secara otomatis, dengan mengintegrasikan sistem AI ke dalam ERP perusahaan atau software keuangan dan menggunakan OCR untuk membaca nota dan mendeteksi jika ada manipulasi.
+      - Analisis dan prediksi kecurangan, AI akan mengecek pola pengeluaran dan mendeteksi klaim yang tidak sesuai. Jika transaksi mencurigakan ditemukan, sistem akan memberi peringatan otomatis kepada tim keuangan.
+      - Dashboard monitoring dan laporan kecurangan. Perusahaan bisa menggunakan dashboard berbasis Power BI atau Tableau untuk memonitor klaim reimbursement. Jika ditemukan pola yang berulang, sistem bisa merekomendasikan audit lebih lanjut.
+
+   4. Infrastruktur minimal yang dibutuhkan seperti Cloud Storage, untuk menyimpan data transaksi dan nota (misal AWS S3 atau Google Drive). Kemudian sistem AI/ML yang bisa dijalankan di Google AI, Azure ML atau AWS AI. API dan Integrasi ERP untuk menghubungkan AI ke sistem keuangan perusahaan.
